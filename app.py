@@ -41,5 +41,4 @@ def hello_handler(request: HTTPRequest) -> HTTPResponse:
 
 if __name__ == "__main__":
     server = WSGIServer(host="127.0.0.1", port=8080, app=router) 
-    print("Сервер запущен на http://127.0.0.1:8080")
     server.run()

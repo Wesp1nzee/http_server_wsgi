@@ -1,4 +1,4 @@
-from typing import Callable, Dict, Tuple
+from typing import Callable
 
 class Router:
     def __init__(self):
@@ -22,7 +22,6 @@ class Router:
         Находит обработчик для заданного маршрута и метода.
         """
         path = path.strip("/")  
-        print(f"Пытаемся найти маршрут для {method} /{path}") 
         try:
             return self.routes[path][method]
         except KeyError:

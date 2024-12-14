@@ -87,5 +87,6 @@ class WSGIServer:
         """
         Отправляет HTTP-ответ клиенту.
         """
+        print('client_socket', client_socket)
         response = HTTPResponse(status=status, headers=dict(headers), body=body)
         client_socket.sendall(response.to_bytes())

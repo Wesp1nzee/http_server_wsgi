@@ -46,4 +46,8 @@ class HTTPRequest:
                 headers[key] = value
         self.headers = headers
 
-        self.body = "\r\n".join(lines[body_index + 1:]) if body_index < len(lines) - 1 else None
+        if body_index < len(lines) - 1:
+            self.body = "\r\n".join(lines[body_index + 1:])
+        else:
+            self.body = None
+
